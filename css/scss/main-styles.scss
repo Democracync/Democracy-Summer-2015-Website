@@ -1,0 +1,315 @@
+@import 'vars';
+@import 'mixins';
+@import 'bootstrap'; 
+@import 'icons';
+
+/*********************
+***** Our Stuff ******
+*********************/   
+
+/******** Typography ********/
+.orange {color: $orange;}
+p.bigger {font-size: 24px; font-family: $proxima; margin-bottom: 20px;}
+
+/******** Header ********/
+.big-head {
+    background: transparent url(../img/main-head-bg.jpg) bottom center no-repeat;
+    background-size: cover;
+	background-attachment: fixed;
+    height: 100%;
+    max-width: 100%;
+}
+.demSum {color: #aaa; display: inline; line-height: 40px; font-weight: normal; position: absolute; left: 0; padding-left: 10px;}
+
+/******** Disappearing nav bar ********/ 
+.second-nav-wrapper {
+	min-height: 40px; 
+	text-align: center; 
+	margin-top: -40px;
+	position:fixed; top:0;
+    @include transition(all .6s ease-in-out);
+	width: 100%;
+	background-color: #fff;
+	border-bottom: 1px solid #ddd;
+	font-family: $proxima;
+	font-size: 16px;
+	font-weight: bold;
+	}
+.second-nav-wrapper.fixed {
+    position:fixed;
+    top:0;
+	width: 100%;
+	z-index: 1000;
+	display: block;
+	margin-bottom: 30px;
+	margin-top: 0;
+	-webkit-transition: .6s ease-in-out;
+    -o-transition: .6s ease-in-out;
+    transition: .6s ease-in-out;
+}
+ul.second-nav {
+    margin: 0; 
+    padding: 0; 
+    margin: 0 auto;
+    & li {display: inline; margin: 0 15px;}
+    & li a {
+        padding: 10px 20px; 
+        color: $orange; 
+        line-height: 40px;
+        &:hover {background-color: #fff; color: $light-orange; text-decoration: none; border-radius: 5px;}
+    }
+}
+.yellow ul.second-nav > li > a {color: #333;}
+
+/******** Responsive Menu ********/
+.show-menu {
+	text-decoration: none;
+	color: #999;
+	background: #fff;
+	text-align: left;
+	padding: 10px 0 10px 10px;
+	display: none;
+	margin: 0;  
+}
+/*Hide checkbox*/
+input[type=checkbox]{
+    display: none;
+}
+
+/*Show menu when invisible checkbox is checked*/
+input[type=checkbox]:checked ~ #menu{
+    display: block;
+}
+
+/*Responsive Styles (disappearing nav)*/
+@media screen and (max-width : 760px){
+	/*Make dropdown links appear inline*/
+	ul {
+		position: static;
+		display: none;
+	}
+	/*Create vertical spacing*/
+	li {
+		margin-bottom: 1px;
+	}
+	/*Make all menu links full width*/
+	ul li, li a {
+		width: 100%;
+	}
+	/*Display 'show menu' link*/
+	.show-menu {
+		display:block;
+	}
+	.demSum {display: none; visibility: hidden;}
+}
+/******** Head buttons ********/
+.main-nav {
+	width: 80%; 
+	margin: 0 auto 50px auto;
+	background-color: transparent;
+}
+.btn-orange {
+  color: #ffffff;
+  background-color: $orange;
+  border: 3px solid #fff;
+}
+.btn-orange:hover,
+.btn-orange:focus,
+.btn-orange.focus,
+.btn-orange:active,
+.btn-orange.active {
+  color: #ffffff;
+  background-color: $light-orange;
+  border-color: #eee;
+}
+.btn-orange:active,
+.btn-orange.active {
+  background-image: none;
+}
+.btn-orange.disabled,
+.btn-orange[disabled] {
+  background-color: $light-orange;
+  border-color: #fff;
+}
+
+.btn-blue {
+  color: #ffffff;
+  background-color: $blue;
+  border: 3px solid #fff;
+}
+.btn-blue:hover,
+.btn-blue:focus,
+.btn-blue.focus,
+.btn-blue:active,
+.btn-blue.active {
+  color: #ffffff;
+  background-color: $light-blue;
+  border-color: #eee;
+}
+.btn-blue:active,
+.btn-blue.active {
+  background-image: none;
+}
+.btn-blue.disabled,
+.btn-blue[disabled] {
+  background-color: $light-blue;
+  border-color: #fff;
+}
+
+.btn-green {
+  color: #ffffff;
+  background-color: $green;
+  border: 3px solid #fff;
+}
+.btn-green:hover,
+.btn-green:focus,
+.btn-green.focus,
+.btn-green:active,
+.btn-green.active {
+  color: #ffffff;
+  background-color: $light-green;
+  border-color: #eee;
+}
+.btn-green:active,
+.btn-green.active {
+  background-image: none;
+}
+.btn-green.disabled,
+.btn-green[disabled] {
+  background-color: $light-green;
+  border-color: #fff;
+}
+
+.btn-gray {
+  color: #ffffff;
+  background-color: #343434;
+  border: 3px solid $light-orange;
+  line-height: 1.22 !important;
+}
+.btn-gray:hover,
+.btn-gray:focus,
+.btn-gray.focus,
+.btn-gray:active,
+.btn-gray.active {
+  color: #ffffff;
+  background-color: #777;
+  border-color: #eee;
+}
+.btn-gray:active,
+.btn-gray.active {
+  background-image: none;
+}
+.btn-gray.disabled,
+.btn-gray[disabled] {
+  background-color: #777;
+  border-color: #eee;
+}
+  
+.btn-xxl,
+.btn-group-xxl > .btn {
+  padding: 7px 15px;
+  font-size: 20px;
+  line-height: 1.66;
+  border-radius: 5px;
+  margin: 5px 7px;
+  width: 160px;
+}
+
+/******** Full-size sections ********/
+.about-section, .key-dates-section, .apply-section {
+	height: 100%;
+	width: 100%;
+	padding-top: 50px;
+	padding-bottom: 30px;
+	display: table;
+}
+
+.back-to-top {margin-top: 35px;}	
+
+/******** About Section ********/
+.about-section {background: transparent url(../img/about-bg-2.png) repeat;
+    & h1 {color: $green; margin-bottom: 45px;}
+    & h1 .sub-head {font-size: .7em; line-height: .7em;}
+}
+.pull-right.inline-img {max-width: 260px; height: auto; margin: 7px 0 7px 15px; border: 5px solid #ddd;}
+.pull-left.inline-img {max-width: 260px; height: auto; margin: 7px 15px 7px 0; border: 5px solid #ddd;}
+
+/******** Key Dates Section ********/
+.key-dates-section {background: $light-blue url(../img/key-dates-bg.jpg) top right; background-size: cover; background-attachment: fixed;
+    & h1 {color: #fff; margin-bottom: 5px; text-shadow: 2px 2px 0px #29404a;}
+    & h2.sub-head {color: #fff; margin-top: 5px; margin-bottom: 25px; font-weight: normal; text-shadow: 2px 2px 0px #29404a;}
+}
+.key-dates {max-width: 800px; margin: auto; background-color: #fff; border-radius: 5px;}
+table.key-dates td, table.key-dates th {padding-left: 10px;}
+
+/******** Apply Section ********/
+.apply-section {background: #fff; padding-top: 0; border-top: 6px solid #fff;}
+.apply-header {background: #fff url(../img/apply-head-bg-orange.jpg) center top no-repeat; padding-top: 80px; height: 310px; margin-bottom: 15px;
+    & h1 {color: #fff; font-size: 5em; line-height: .8em; text-shadow: 2px 2px 0px #792d26;}
+}
+h2.apply-sub-head {font-weight: 700; margin-bottom: 20px; line-height: 1.3em;}
+.application-button-section {margin-top: 25px;}
+a.application-button {background-color: #343434; border: 3px solid $light-orange; padding: 12px 7px; max-width: 90%; color: #fff; float: left; border-radius: 10px;
+    & h3 {margin-top: 5px;}
+    &:hover {color: #ffffff; background-color: #777; border-color: #eee; text-decoration: none;}
+    &:hover h3 {color: #fff;}
+}
+
+/******** Thank You Page ********/
+.thank-you-head {/*background: transparent url(../img/about-bg.png) repeat;*/ background-color: $blue; color: #fff; height: 100%;
+    & h1 {text-shadow: none; font-size: 4em;}
+    & p {color: #fff; font-size: 24px;}
+}
+
+/******** FAQ Page ********/
+.faq-page {background: transparent url(../img/about-bg-2.png) repeat; padding-bottom: 30px;}
+.faq-head {background-color: $orange; padding-top: 25px;
+    & h1 {color: #fff; font-size: 4em; text-shadow: none;}
+}
+
+/******** Footer ********/
+footer {width: 100%; background-color: $orange; color: #fff; font-size: 16px; padding: 15px;}
+
+
+/******** Our Media Queries ********/
+@media screen and (max-width: 767px) {
+	  .jumbotron {padding-top: 40px;}
+      .jumbotron h2 {font-size: 1.5em;}
+	  .main-nav {display: none; visibility: hidden;}
+	  .second-nav-wrapper {margin-top: 0; margin-bottom: 30px; padding: 0; border: none; height: 30px;
+        & span {font-size: 26px;}
+      }
+	  ul.second-nav {background-color: #fff;}
+	  ul.second-nav li {display: block; width: 100%; margin: 0; border-bottom: 1px solid #ccc; text-align: left}
+	  ul.second-nav li a {padding: 0 30px;}
+	  .application-button-section {max-width: 90%; margin: 25px auto;}
+	  a.application-button {margin-bottom: 20px; width: 100%;}
+}
+@media screen and (max-width: 490px) {
+      .jumbotron h1, .jumbotron .h1 {font-size: 3em;}
+      .jumbotron h2 {font-size: 1.3em;}
+	  .pull-right.inline-img, .pull-left.inline-img {max-width: 100%; float:none !important;}
+  }
+@media screen and (max-width: 386px) {
+      .jumbotron h1, .jumbotron .h1 {font-size: 2.5em;}
+}
+
+/******** Responsive Table ********/
+table { 
+  width: 100%; 
+  border-collapse: collapse; 
+  background: #fff;
+}
+/* Zebra striping */
+th { 
+  background: #fff;  
+  font-weight: bold; 
+}
+td, th { 
+  padding: 6px; 
+  border: 1px solid #ccc; 
+  text-align: left; 
+  background: #fff;
+}
+
+
