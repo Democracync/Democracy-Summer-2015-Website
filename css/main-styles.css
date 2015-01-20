@@ -285,7 +285,7 @@ body {
   font-family: "proxima-nova", arial, sans-serif;
   font-size: 20px;
   line-height: 1.42857143;
-  color: #444;
+  color: #333;
   background-color: #ffffff; }
 
 input,
@@ -2855,7 +2855,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 
 @font-face {
   font-family: 'IcoMoon-Free';
-  src: url("../IcoMoon-Free.ttf?-b7qzp2") format("truetype");
+  src: url("../fonts/IcoMoon-Free.ttf?-b7qzp2") format("truetype");
   font-weight: normal;
   font-style: normal; }
 .icon {
@@ -4357,6 +4357,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .orange {
   color: #e74c3c; }
 
+.blue {
+  color: #6bb1cf; }
+
 p.bigger {
   font-size: 24px;
   font-family: "proxima-nova", arial, sans-serif;
@@ -4603,13 +4606,13 @@ input[type=checkbox]:checked ~ #menu {
   max-width: 260px;
   height: auto;
   margin: 7px 0 7px 15px;
-  border: 5px solid #ddd; }
+  border: 4px solid #ccc; }
 
 .pull-left.inline-img {
   max-width: 260px;
   height: auto;
   margin: 7px 15px 7px 0;
-  border: 5px solid #ddd; }
+  border: 4px solid #ccc; }
 
 /******** Key Dates Section ********/
 .key-dates-section {
@@ -4638,7 +4641,7 @@ table.key-dates td, table.key-dates th {
 
 /******** Apply Section ********/
 .apply-section {
-  background: #fff;
+  background: transparent url(../img/about-bg-2.png) repeat;
   padding-top: 0;
   border-top: 6px solid #fff; }
 
@@ -4694,8 +4697,9 @@ a.application-button {
 
 /******** FAQ Page ********/
 .faq-page {
-  background: transparent url(../img/about-bg-2.png) repeat;
-  padding-bottom: 30px; }
+  background-color: #fff;
+  padding-bottom: 30px;
+  font-size: 16px; }
 
 .faq-head {
   background-color: #e74c3c;
@@ -4761,12 +4765,14 @@ footer {
   .jumbotron h2 {
     font-size: 1.3em; }
 
-  .pull-right.inline-img, .pull-left.inline-img {
+  img.pull-right, img.pull-left, .pull-right.inline-img, .pull-left.inline-img {
     max-width: 100%;
-    float: none !important; } }
+    float: none !important;
+    display: table;
+    margin: 10px auto; } }
 @media screen and (max-width: 386px) {
   .jumbotron h1, .jumbotron .h1 {
-    font-size: 2.5em; } }
+    font-size: 3em; } }
 /******** Responsive Table ********/
 table {
   width: 100%;
