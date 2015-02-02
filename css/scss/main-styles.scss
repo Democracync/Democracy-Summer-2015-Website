@@ -17,7 +17,7 @@ p.bigger {font-size: 24px; font-family: $proxima; margin-bottom: 20px;}
     background: transparent url(../img/main-head-bg.jpg) bottom center no-repeat;
     background-size: cover;
 	background-attachment: fixed;
-    height: 100%;
+    min-height: 100%;
     max-width: 100%;
 }
 .demSum {color: #aaa; display: inline; line-height: 40px; font-weight: normal; position: absolute; left: 0; padding-left: 10px;}
