@@ -1,12 +1,31 @@
 // Variables
 
 // Colors
-$blue: #6bb1cf;
-$orange: #e74c3c;
-$green: #69b761;
-$light-blue: #a1c2d1;
-$light-orange: #e37d73;
-$light-green: #91bf8c;
+$blue: #46adcb;
+$light-blue: #b1dde9;
+$orange: #ef4c3b;
+$light-orange: #f9b59f;
+$yellow: #fec235;
+$green: #a7d888;
+$light-green: #d3ebc3;
+$light-gray: #eee;
 
-// Fonts
-$proxima: "proxima-nova", arial, sans-serif;
+$base-font-color: #333;
+$base-bg-color: #eee;
+
+// Section-specific colors
+$dem-sum-figs-bg-color: #dddcd7;
+
+// Type
+$base-font-size: 1.4rem;
+
+$base-font-family: "proxima-nova", arial, sans-serif;
+$secondary-font-family: "proxima-nova-condensed",sans-serif;
+$accent-font-family: "chaparral-pro", serif;
+
+// Media queries
+$break-huge: 1280px;
+$break-large: 1025px;
+$break-medium: 780px;
+$break-small: 480px;
+$break-tiny: 320px;

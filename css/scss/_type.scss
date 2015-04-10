@@ -1,0 +1,87 @@
+/* Type */
+// Mostly global styles here, section-specific styles are in _sections.scss
+
+// Paragraphs
+p {
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  @media screen and (max-width: $break-large) {
+    font-size: 1.3rem;
+  }
+}
+
+p.center {
+  @include center(60%);
+  & span.sig {
+    display: block;
+    text-align: right;
+    padding-top: 11px;
+  }
+  @media screen and (max-width: $break-large) {
+    @include center(90%);
+  }
+}
+
+// Headings
+h1 {
+  font-size: 3.6rem;
+  &.section-header {
+    text-align: center;
+    margin-top: 0;
+    @media screen and (max-width: $break-small) {
+      line-height: 3.8rem;
+      margin-top: 30px;
+    }
+  }
+
+  @media screen and (max-width: $break-medium) {
+    line-height: 3.8rem;
+    margin-top: 30px;
+  }
+}
+
+h2 {
+  font-size: 3rem;
+  @media screen and (max-width: $break-large) {
+    font-size: 2.4rem;
+  }
+  @media screen and (max-width: $break-small) {
+    font-size: 2.8rem;
+    line-height: 3rem;
+  }
+}
+h3, h4, h5, h6 {
+  font-family: $secondary-font-family;
+}
+
+
+h2.highlight {
+  color: $orange;
+  font-family: $accent-font-family;
+  font-style: italic;
+  font-weight: normal;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+// Links
+
+// Blockquote - big quotes
+blockquote {
+  font-family: $accent-font-family;
+  font-style: italic;
+  font-size: 3rem;
+  text-align: center;
+  width: 100%;
+  margin: 40px auto;
+  padding: 30px 0;
+  border-top: 2px solid $light-gray;
+  border-bottom: 2px solid $light-gray;
+  background: transparent url('../img/quotes-bg.png') center center no-repeat;
+  & span.sig {
+    font-weight: bold;
+    text-align: right;
+    display: block;
+    padding-top: 15px;
+  }
+}

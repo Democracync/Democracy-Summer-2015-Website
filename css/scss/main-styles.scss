@@ -1,64 +1,82 @@
 @import 'vars';
+@import 'normalize';
+@import 'jeet/_index';
 @import 'mixins';
-@import 'bootstrap'; 
+@import 'type';
+//@import 'bootstrap';
+@import 'layout';
+@import 'nav';
+@import 'header';
+@import 'sections';
+@import 'footer';
 @import 'icons';
 
 /*********************
 ***** Our Stuff ******
-*********************/   
+*********************/
+
+html {
+  height: 100%;
+}
+body {
+  margin: 0;
+  height: 100%;
+}
+
+span.disappear {
+  @media screen and (max-width: $break-medium) {
+    display: none;
+    visibility: hidden;
+  }
+}
 
 /******** Typography ********/
 .orange {color: $orange;}
 .blue {color: $blue;}
-p.bigger {font-size: 24px; font-family: $proxima; margin-bottom: 20px;}
+p.bigger {font-size: 24px; font-family: $base-font-family; margin-bottom: 20px;}
 
 /******** Header ********/
-.big-head {
-    background: transparent url(../img/main-head-bg.jpg) bottom center no-repeat;
-    background-size: cover;
-	background-attachment: fixed;
-    min-height: 100%;
-    max-width: 100%;
-}
+
+
 .demSum {color: #aaa; display: inline; line-height: 40px; font-weight: normal; position: absolute; left: 0; padding-left: 10px;}
 
-/******** Disappearing nav bar ********/ 
+/******** Disappearing nav bar ********/
 .second-nav-wrapper {
-	min-height: 40px; 
-	text-align: center; 
+	min-height: 40px;
+	text-align: center;
 	margin-top: -40px;
 	position:fixed; top:0;
-    @include transition(all .6s ease-in-out);
+  @include transition(all .6s ease-in-out);
 	width: 100%;
 	background-color: #fff;
 	border-bottom: 1px solid #ddd;
-	font-family: $proxima;
+	font-family: $base-font-family;
 	font-size: 16px;
 	font-weight: bold;
 	}
 .second-nav-wrapper.fixed {
-    position:fixed;
-    top:0;
+  position:fixed;
+  top:0;
 	width: 100%;
 	z-index: 1000;
 	display: block;
 	margin-bottom: 30px;
 	margin-top: 0;
 	-webkit-transition: .6s ease-in-out;
-    -o-transition: .6s ease-in-out;
-    transition: .6s ease-in-out;
+  -o-transition: .6s ease-in-out;
+  transition: .6s ease-in-out;
 }
 ul.second-nav {
-    margin: 0; 
-    padding: 0; 
-    margin: 0 auto;
-    & li {display: inline; margin: 0 15px;}
-    & li a {
-        padding: 10px 20px; 
-        color: $orange; 
-        line-height: 40px;
-        &:hover {background-color: #fff; color: $light-orange; text-decoration: none; border-radius: 5px;}
-    }
+  margin: 0;
+  padding: 0;
+  margin: 0 auto;
+  & li {display: inline; margin: 0 15px;}
+  & li a {
+    padding: 10px 20px;
+    color: $orange;
+    line-height: 40px;
+    &:hover {background-color: #fff; color: $light-orange; text-decoration: none; border-radius: 5px;}
+  }
 }
 .yellow ul.second-nav > li > a {color: #333;}
 
@@ -70,7 +88,7 @@ ul.second-nav {
 	text-align: left;
 	padding: 10px 0 10px 10px;
 	display: none;
-	margin: 0;  
+	margin: 0;
 }
 /*Hide checkbox*/
 input[type=checkbox]{
@@ -83,7 +101,7 @@ input[type=checkbox]:checked ~ #menu{
 }
 
 /*Responsive Styles (disappearing nav)*/
-@media screen and (max-width : 760px){
+@media screen and (max-width: $break-medium){
 	/*Make dropdown links appear inline*/
 	ul {
 		position: static;
@@ -105,7 +123,7 @@ input[type=checkbox]:checked ~ #menu{
 }
 /******** Head buttons ********/
 .main-nav {
-	width: 80%; 
+	width: 80%;
 	margin: 0 auto 50px auto;
 	background-color: transparent;
 }
@@ -205,7 +223,7 @@ input[type=checkbox]:checked ~ #menu{
   background-color: #777;
   border-color: #eee;
 }
-  
+
 .btn-xxl,
 .btn-group-xxl > .btn {
   padding: 7px 15px;
@@ -225,15 +243,13 @@ input[type=checkbox]:checked ~ #menu{
 	display: table;
 }
 
-.back-to-top {margin-top: 35px;}	
+.back-to-top {margin-top: 35px;}
 
 /******** About Section ********/
 .about-section {background: transparent url(../img/about-bg-2.png) repeat;
     & h1 {color: $green; margin-bottom: 45px;}
     & h1 .sub-head {font-size: .7em; line-height: .7em;}
 }
-.pull-right.inline-img {max-width: 260px; height: auto; margin: 7px 0 7px 15px; border: 4px solid #ccc;}
-.pull-left.inline-img {max-width: 260px; height: auto; margin: 7px 15px 7px 0; border: 4px solid #ccc;}
 
 /******** Key Dates Section ********/
 .key-dates-section {background: $light-blue url(../img/key-dates-bg.jpg) top right; background-size: cover; background-attachment: fixed;
@@ -273,7 +289,7 @@ footer {width: 100%; background-color: $orange; color: #fff; font-size: 16px; pa
 
 
 /******** Our Media Queries ********/
-@media screen and (max-width: 767px) {
+@media screen and (max-width: $break-medium) {
 	  .jumbotron {padding-top: 40px;}
       .jumbotron h2 {font-size: 1.5em;}
 	  .main-nav {display: none; visibility: hidden;}
@@ -296,21 +312,19 @@ footer {width: 100%; background-color: $orange; color: #fff; font-size: 16px; pa
 }
 
 /******** Responsive Table ********/
-table { 
-  width: 100%; 
-  border-collapse: collapse; 
+table {
+  width: 100%;
+  border-collapse: collapse;
   background: #fff;
 }
 /* Zebra striping */
-th { 
-  background: #fff;  
-  font-weight: bold; 
+th {
+  background: #fff;
+  font-weight: bold;
 }
-td, th { 
-  padding: 6px; 
-  border: 1px solid #ccc; 
-  text-align: left; 
+td, th {
+  padding: 6px;
+  border: 1px solid #ccc;
+  text-align: left;
   background: #fff;
 }
-
-

@@ -1,0 +1,126 @@
+/* Sections */
+section {
+	min-width: 100%;
+	padding: 0 0 40px 0;
+	margin: 0;
+  position: relative;
+  @include clearfix;
+
+	&.main-title {
+		background: $blue;
+	}
+	&.staff-image {
+		background: transparent;
+		padding: 0;
+	}
+	&.info{
+		background: #fff;
+	}
+}
+
+.main-title-container {
+  @include center(1200px);
+	padding: 10px 20px;
+  @media screen and (max-width: $break-huge) {
+    @include center(1050px);
+    padding: 7px 10px;
+  }
+  @media screen and (max-width: $break-large) {
+    @include center(768px);
+    padding: 7px 10px;
+  }
+  @media screen and (max-width: $break-medium) {
+    @include center(580px);
+    padding: 7px 13px;
+  }
+}
+
+.content-container {
+  @include center(1200px);
+  & p.center {
+    @include center(70%);
+    text-align: justify;
+  }
+	padding: 10px 20px;
+  @media screen and (max-width: $break-large) {
+    padding: 7px 25px;
+  }
+  @media screen and (max-width: $break-medium) {
+    padding: 7px 20px;
+  }
+}
+
+
+// Columns
+.content-full-width {
+  @include stack();
+  @include cf();
+}
+
+.content-half {
+  @include col(1/2, $cycle: 2);
+  @include cf();
+  @media screen and (max-width: $break-medium) {
+    @include stack();
+  }
+}
+
+.content-thirds {
+  @include col(1/3, $cycle: 3);
+  @include cf();
+  @media screen and (max-width: $break-small) {
+    @include stack();
+  }
+}
+
+.content-third {
+  @include col(1/3, $cycle: 3);
+  @include cf();
+  @media screen and (max-width: $break-medium) {
+    @include stack();
+  }
+}
+
+.content-two-thirds {
+  @include col(2/3, $cycle: 2);
+  @include cf();
+  @media screen and (max-width: $break-medium) {
+    @include stack();
+  }
+}
+
+.content-fourth {
+  @include col(1/4, $cycle: 4);
+  @include cf();
+  @media screen and (max-width: $break-medium) {
+    @include col(1/2, $cycle: 2);
+  }
+  @media screen and (max-width: $break-small) {
+    @include stack();
+  }
+}
+
+// Images
+%img-pull {
+  height: auto;
+  border: 4px solid #ccc;
+  @media screen and (max-width: $break-medium) {
+    margin: 15px auto;
+  }
+}
+
+img.center {
+  max-width: 100%;
+  margin: 20px auto;
+  display: block;
+}
+
+img.pull-right {
+  @extend %img-pull;
+  margin: 7px 0 7px 15px;
+}
+
+img.pull-left {
+  @extend %img-pull;
+  margin: 7px 15px 7px 0;
+}

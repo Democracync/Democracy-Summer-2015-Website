@@ -1,0 +1,60 @@
+.big-head {
+  background: transparent url(../img/main-head-bg.jpg) bottom center no-repeat;
+  background-size: cover;
+	background-attachment: fixed;
+  min-height: 100%;
+  max-width: 100%;
+  @media screen and (max-width: $break-medium) {
+    padding-top: 40px;
+  }
+}
+
+.main-title-wrapper {
+  padding: 0;
+  border: 10px solid #fff;
+  margin: 30px auto 0 auto;
+	@media screen and (max-width: $break-large) {
+    border-width: 7px;
+	}
+}
+
+h1.main-title {
+	font-size: 6rem;
+  line-height: 6rem;
+	text-align: center;
+	color: #fff;
+  margin: 0;
+  text-shadow: 2px 2px 0 #000;
+  @media screen and (max-width: $break-huge) {
+    font-size: 4.9rem;
+    line-height: 4.9rem;
+  }
+  @media screen and (max-width: $break-large) {
+    font-size: 3.6rem;
+    line-height: 3.6rem;
+  }
+  @media screen and (max-width: $break-medium) {
+    font-size: 2.8rem;
+    line-height: 2.8rem;
+  }
+}
+
+h2.main-sub-title {
+  text-align: right;
+  font-size: 2.6rem;
+  font-weight: normal;
+  color: #fff;
+  margin-top: 10px;
+  text-shadow: 2px 2px 0 #000;
+  @media screen and (max-width: $break-large) {
+    font-size: 2rem;
+  }
+  @media screen and (max-width: $break-medium) {
+    font-size: 1.7rem;
+  }
+  & strong {
+    @media screen and (max-width: $break-medium) {
+      display: block;
+    }
+  }
+}
